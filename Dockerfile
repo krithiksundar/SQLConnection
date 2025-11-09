@@ -1,4 +1,4 @@
-FROM container-registry.oracle.com/database/instantclient:21.11
+FROM container-registry.oracle.com/database/instantclient:latest
 
 WORKDIR /app
 COPY . /app

@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+      
+      - name: Login to Oracle Container Registry
+        run: echo "${{ secrets.ORACLE_PASS }}" | docker login container-registry.oracle.com -u "${{ secrets.ORACLE_USER }}" --password-stdin
 
       - name: Build Docker image
         run: docker build -t oracle-sql-runner .

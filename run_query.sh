@@ -14,4 +14,4 @@ SET PAGESIZE 0
 EXIT
 EOF
 
-echo "✅ Query executed successfully. Results saved to output.txt"
+echo "Query executed successfully. Results saved to output.txt"

@@ -6,10 +6,11 @@ COPY . /app
 # Ensure the script is executable
 RUN chmod +x run_query.sh
 
-# Debug: check files inside container
-RUN echo "Files in /app:" && ls -l /app
-RUN echo "run_query.sh type:" && file run_query.sh
-RUN head -n 30 run_query.sh
+# Debug: check script content and line endings
+RUN echo "Listing files in /app:" && ls -l /app
+RUN echo "Checking first 10 lines of run_query.sh (CRLF should show ^M):" && head -n 10 run_query.sh | cat -v
+RUN echo "Checking first 10 lines of tnsdetails.env:" && head -n 10 tnsdetails.env | cat -v
+RUN echo "Default shell: $SHELL"
 
 # Automatically detect Oracle Instant Client path and add to PATH yes
 RUN ORACLE_HOME=$(find / -type d -name "instantclient*" -print -quit) && \

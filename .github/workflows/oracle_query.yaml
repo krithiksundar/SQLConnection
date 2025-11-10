@@ -23,10 +23,8 @@ jobs:
         run: docker build --progress=plain -t oracle-sql-runner .
 
       - name: Run container and execute SQL
-        env:
-          DB_PASS: ${{ secrets.DB_PASS }}
         run: |
-          docker run -e DB_PASS=${{ secrets.DB_PASS }} oracle-sql-runner
+          docker run oracle-sql-runner
 
       - name: Commit output to repo
         run: |

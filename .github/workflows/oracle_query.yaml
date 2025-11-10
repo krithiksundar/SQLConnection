@@ -20,7 +20,7 @@ jobs:
         
 
       - name: Build Docker image
-        run: docker build -t oracle-sql-runner .
+        run: docker build build --progress=plain -t oracle-sql-runner .
 
       - name: Run container and execute SQL
         env:

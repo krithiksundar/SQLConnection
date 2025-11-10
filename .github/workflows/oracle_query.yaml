@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Login to Oracle Container Registry
+        shell: pwsh
         run: echo "${{ secrets.ORACLE_PASS }}" | docker login container-registry.oracle.com -u "${{ secrets.ORACLE_USER }}" --password-stdin
 
       - name: Build Docker image

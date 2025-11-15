@@ -13,6 +13,7 @@ echo "192.168.0.107 sdb sdb.localdomain" >> /etc/hosts
 echo "Connecting to Oracle and executing query..."
 > output.txt
 
+echo > /dev/tcp/192.168.0.107/1521 && echo "Port open" || echo "Port closed"
 
 echo "Testing Oracle DB connection..."
 echo "--------------------------------"

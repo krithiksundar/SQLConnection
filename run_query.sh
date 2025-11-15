@@ -16,7 +16,7 @@ echo "Connecting to Oracle and executing query..."
 echo "Attempting SQLPlus connection (timeout: 60 seconds)..."
 
 # ---- FIX: wrap heredoc inside bash -c ----
-timeout 60 sqlplus "$DB_USER/$DB_PASS@$DB_TNS"
+timeout 240 sqlplus "$DB_USER/$DB_PASS@$DB_TNS"
 
 
 

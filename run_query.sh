@@ -9,6 +9,7 @@ echo "DB_USER=$DB_USER"
 echo "DB_TNS=$DB_TNS"
 echo "DB_PASS=${DB_PASS:0:4}****"
 
+echo "192.168.0.107 sdb sdb.localdomain" >> /etc/hosts
 echo "Connecting to Oracle and executing query..."
 > output.txt
 

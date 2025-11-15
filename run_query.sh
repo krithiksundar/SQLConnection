@@ -18,7 +18,7 @@ echo > /dev/tcp/192.168.0.107/1521 && echo "Port open" || echo "Port closed"
 echo "Testing Oracle DB connection..."
 echo "--------------------------------"
 
-timeout 120 sqlplus -S "$DB_USER/$DB_PASS@$DB_TNS" <<EOF
+timeout 120 sqlplus -S system/sys@//192.168.0.107:1521/sdb.localdomain <<EOF
 SET HEADING OFF
 SET FEEDBACK OFF
 SELECT 'Connection Successful!' FROM dual;

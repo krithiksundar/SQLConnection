@@ -5,23 +5,20 @@ set -x
 # First, load environment variables
 source tnsdetails.env
 
-echo "DB_USER=$DB_USER"
-echo "DB_TNS=$DB_TNS"
-echo "DB_PASS=${DB_PASS:0:4}****"
+CONN_STR="$DB_USER/$DB_PASS@//$DB_HOST:$DB_PORT/$DB_SERVICE"
 
 echo "192.168.0.107 sdb sdb.localdomain" >> /etc/hosts
-echo "Connecting to Oracle and executing query..."
-> output.txt
 
+> output.txt
 echo > /dev/tcp/192.168.0.107/1521 && echo "Port open" || echo "Port closed"
 
 echo "Testing Oracle DB connection..."
 echo "--------------------------------"
 
-timeout 120 sqlplus -S system/sys@//192.168.0.107:1521/sdb.localdomain <<EOF
+timeout 120 sqlplus -S "$CONN_STR" <<EOF >> output.txt 2>&1
 SET HEADING OFF
 SET FEEDBACK OFF
-SELECT 'Connection Successful!' FROM dual;
+SELECT name from v$database;
 EXIT;
 EOF
 

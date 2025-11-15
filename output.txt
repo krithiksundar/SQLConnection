@@ -1,0 +1,16 @@
+
+SQL*Plus: Release 12.2.0.1.0 Production on Sat Nov 15 12:12:32 2025
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+Last Successful login time: Sat Nov 15 2025 12:10:02 +00:00
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+
+SQL> 
+NAME
+---------
+SDB
+
+SQL> Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production

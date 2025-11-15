@@ -14,7 +14,7 @@ echo "Connecting to Oracle and executing query..."
 > output.txt
 
 # Run sqlplus and capture errors
-if ! sqlplus -s "$DB_USER/$DB_PASS@$DB_TNS" <<EOF >> output.txt 2>&1
+if ! sqlplus "$DB_USER/$DB_PASS@$DB_TNS" <<EOF >> output.txt 2>&1
 SET HEADING OFF
 SET FEEDBACK OFF
 SET PAGESIZE 0

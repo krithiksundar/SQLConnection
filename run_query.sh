@@ -15,7 +15,7 @@ echo > /dev/tcp/192.168.0.107/1521 && echo "Port open" || echo "Port closed"
 echo "Testing Oracle DB connection..."
 echo "--------------------------------"
 
-timeout 240 sqlplus "$CONN_STR" <<EOF 
+timeout 240 sqlplus "$CONN_STR" <<EOF >> output.txt 2>&1
 SET HEADING OFF
 SET FEEDBACK OFF
 SELECT name from v\$database;

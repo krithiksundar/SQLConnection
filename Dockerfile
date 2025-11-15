@@ -1,4 +1,6 @@
 FROM container-registry.oracle.com/database/instantclient:latest
+# Add Oracle host to container /etc/hosts
+RUN echo "192.168.0.107 sdb sdb.localdomain" >> /etc/hosts
 
 WORKDIR /app
 COPY . /app

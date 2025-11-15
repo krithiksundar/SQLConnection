@@ -18,7 +18,7 @@ echo "--------------------------------"
 timeout 120 sqlplus -S "$CONN_STR" <<EOF >> output.txt 2>&1
 SET HEADING OFF
 SET FEEDBACK OFF
-SELECT name from v$database;
+SELECT name from v\$database;
 EXIT;
 EOF
 

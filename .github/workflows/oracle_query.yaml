@@ -24,7 +24,7 @@ jobs:
 
       - name: Run container and execute SQL
         run: |
-          docker run --network host -v ${{ github.workspace }}:/app oracle-sql-runner
+          docker run --network host oracle-sql-runner
 
       - name: Commit output to repo
         run: |

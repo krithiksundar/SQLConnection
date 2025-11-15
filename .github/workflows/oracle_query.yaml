@@ -31,6 +31,5 @@ jobs:
             git config user.name "github-actions"
             git config user.email "actions@github.com"
             git add output.txt
-            git diff --cached || true
             git commit -m "Automated SQL output update"
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/krithiksundar/SQLConnection.git HEAD:main
